@@ -1,0 +1,6 @@
+{
+  "name": "Satria Bahari Portfolio",
+  "description": "Full portfolio of Satria Bahari, Software Engineer and content creator, featuring multi-page layouts, dark/light toggle, and localized content.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
