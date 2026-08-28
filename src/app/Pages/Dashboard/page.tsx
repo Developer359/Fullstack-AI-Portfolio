@@ -1,7 +1,6 @@
 import React, { useMemo, useRef, useEffect, useState } from 'react';
 import { usePortfolio } from '../../../context/PortfolioContext';
 import { githubStats, pinnedReposData, dashboardTranslations } from './data/dashboardData';
-import { LiveStats } from './sections/LiveStats';
 import { Github, Star, GitFork, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -417,8 +416,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* 2. Live latency and Spotify widgets */}
-      <LiveStats />
+     
     </div>
   );
 }
