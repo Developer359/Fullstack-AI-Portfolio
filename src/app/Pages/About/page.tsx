@@ -2,6 +2,7 @@ import React from 'react';
 import { usePortfolio } from '../../../context/PortfolioContext';
 import { aboutTranslations } from './data/aboutData';
 import { StoryTimeline } from './sections/StoryTimeline';
+import { Education } from './sections/Education';
 import { motion } from 'motion/react';
 
 export default function AboutPage() {
@@ -84,6 +85,9 @@ export default function AboutPage() {
 
       {/* 2. Story Timeline / Career timeline */}
       <StoryTimeline />
+
+      {/* 3. Education timeline */}
+      <Education />
     </div>
   );
 }

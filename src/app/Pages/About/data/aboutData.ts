@@ -1,5 +1,7 @@
 import ArswiftLogo from '../../../../assets/images/Arswift.png';
 import CorvitLogo from '../../../../assets/images/Corvit.png';
+import VuLogo from '../../../../assets/images/Vu.jpg';
+import PunjabCollegeLogo from '../../../../assets/images/Punjabcollge.png';
 
 export const aboutTranslations: Record<string, any> = {
   US: {
@@ -11,6 +13,8 @@ export const aboutTranslations: Record<string, any> = {
     regards: 'Best regards,',
     careerTitle: 'Career',
     careerSubtitle: 'My professional journey.',
+    educationTitle: 'Education',
+    educationSubtitle: 'My academic journey.',
     showDetails: 'Show details',
     hideDetails: 'Hide details',
   },
@@ -23,6 +27,8 @@ export const aboutTranslations: Record<string, any> = {
     regards: 'Naik tamannaon ke sath,',
     careerTitle: 'Career',
     careerSubtitle: 'Mera peshawarana safar.',
+    educationTitle: 'Taleem',
+    educationSubtitle: 'Mera taleemi safar.',
     showDetails: 'Tafseelat dikhayen',
     hideDetails: 'Tafseelat chupayen',
   },
@@ -96,4 +102,59 @@ export const careerData = [
       ],
     },
   },
+];
+
+export const educationData = [
+  {
+    id: 'vu',
+    company: 'Virtual University Of Pakistan',
+    logo: VuLogo,
+    countryCode: '',
+    role: {
+      US: 'Bachelors of computer science',
+      ID: 'Bachelors of computer science',
+    },
+    location: {
+      US: '',
+      ID: '',
+    },
+    duration: {
+      US: '2024-2028',
+      ID: '2024-2028',
+    },
+    meta: {
+      US: [],
+      ID: [],
+    },
+    bullets: {
+      US: [],
+      ID: [],
+    },
+  },
+  {
+    id: 'pgc',
+    company: 'Punjab Group of colleges',
+    logo: PunjabCollegeLogo,
+    countryCode: '',
+    role: {
+      US: 'ICS',
+      ID: 'ICS',
+    },
+    location: {
+      US: '',
+      ID: '',
+    },
+    duration: {
+      US: '2022-2024',
+      ID: '2022-2024',
+    },
+    meta: {
+      US: [],
+      ID: [],
+    },
+    bullets: {
+      US: [],
+      ID: [],
+    },
+  }
 ];
