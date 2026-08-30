@@ -12,7 +12,6 @@
 /* Custom styles and smooth scroll setups */
 html {
   scroll-behavior: smooth;
-  scrollbar-gutter: stable;
 }
 
 body {
