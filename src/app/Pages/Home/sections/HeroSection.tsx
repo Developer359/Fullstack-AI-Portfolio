@@ -27,7 +27,7 @@ export const HeroSection: React.FC = () => {
           className="flex items-center gap-x-2 text-[14px] md:text-[15px] text-neutral-600 dark:text-neutral-400 font-normal select-none"
         >
           <span>•</span>
-          <span>{lang === 'US' ? 'Based in Fasilabad, Pakistan' : 'Fasilabd, Pakistan mein muqeem'}</span>
+          <span>{lang === 'US' ? 'Based in Faisalabad, Pakistan' : 'Faisalabad, Pakistan mein muqeem'}</span>
           <span className="text-[11px] font-sans font-bold text-neutral-500 dark:text-neutral-400 ml-[-2px] tracking-tight">PK</span>
           <span className="ml-[6px] mr-[1px]">•</span>
           <span>{lang === 'US' ? 'Onsite' : 'Onsite'}</span>

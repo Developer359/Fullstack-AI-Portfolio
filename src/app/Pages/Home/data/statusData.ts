@@ -9,7 +9,7 @@ export const statusTranslations: Record<'US' | 'ID', StatusTranslations> = {
     statusBuildingCoolStuff: "Building Cool Stuff"
   },
   ID: {
-    statusOpenToWork: "Siap Bekerja",
-    statusBuildingCoolStuff: "Sedang Membuat Hal Keren"
+    statusOpenToWork: "Kam Ka Lia Tiyar Hun",
+    statusBuildingCoolStuff: "Cool Cheezein Bana Rha Hun"
   }
 };

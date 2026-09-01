@@ -9,9 +9,9 @@ export const Sidebar: React.FC = () => {
   const { activeTab, setActiveTab } = usePortfolio();
 
   return (
-    <aside 
-      id="sidebar-container" 
-      className="hidden lg:flex lg:w-85 flex-col pt-6 pb-3 lg:pb-1.5 lg:pl-18 bg-[#fbfbfb] dark:bg-[#0c0c0d]  lg:fixed lg:left-0  lg:top-0 lg:h-screen lg:max-h-screen shrink-0 z-30 overflow-hidden"
+    <aside
+      id="sidebar-container"
+      className="hidden lg:flex lg:w-88 flex-col pt-6 pb-3 lg:pb-1.5 lg:pl-20 bg-[#fbfbfb] dark:bg-[#0c0c0d]  lg:fixed lg:left-0  lg:top-0 lg:h-screen lg:max-h-screen shrink-0 z-30 overflow-hidden"
     >
       <div className="flex-shrink-0 space-y-4 pb-4">
         <ProfileBlock variant="sidebar" />
@@ -19,13 +19,12 @@ export const Sidebar: React.FC = () => {
         <div className="flex items-center justify-center gap-1.5 lg:mb-5 lg:mt-[-2.5px] max-w-[240px] mx-auto">
           <Switches variant="sidebar" />
 
-          <button 
+          <button
             onClick={() => setActiveTab('Dashboard')}
-            className={`h-9 w-9 rounded-full bg-neutral-100 dark:bg-[#141417] border flex items-center justify-center hover:text-yellow-500 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors shadow-sm cursor-pointer shrink-0 ${
-              activeTab === 'Dashboard'
+            className={`h-9 w-9 rounded-full bg-neutral-100 dark:bg-[#141417] border flex items-center justify-center hover:text-yellow-500 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors shadow-sm cursor-pointer shrink-0 ${activeTab === 'Dashboard'
                 ? 'border-yellow-400 text-yellow-500 bg-yellow-400/5'
                 : 'border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400'
-            }`}
+              }`}
             title="System Dashboard"
           >
             <svg className="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
