@@ -11,12 +11,12 @@ export const Sidebar: React.FC = () => {
   return (
     <aside 
       id="sidebar-container" 
-      className="hidden lg:flex lg:w-72 flex-col pt-5 pb-3 lg:pl-9 bg-[#fbfbfb] dark:bg-[#0c0c0d]  lg:fixed lg:left-0  lg:top-0 lg:h-screen lg:max-h-screen shrink-0 z-30 overflow-hidden"
+      className="hidden lg:flex lg:w-85 flex-col pt-6 pb-3 lg:pb-1.5 lg:pl-18 bg-[#fbfbfb] dark:bg-[#0c0c0d]  lg:fixed lg:left-0  lg:top-0 lg:h-screen lg:max-h-screen shrink-0 z-30 overflow-hidden"
     >
       <div className="flex-shrink-0 space-y-4 pb-4">
         <ProfileBlock variant="sidebar" />
 
-        <div className="flex items-center justify-center gap-1.5 lg:mb-5 lg:mt-[-3px] max-w-[240px] mx-auto">
+        <div className="flex items-center justify-center gap-1.5 lg:mb-5 lg:mt-[-2.5px] max-w-[240px] mx-auto">
           <Switches variant="sidebar" />
 
           <button 
@@ -38,7 +38,7 @@ export const Sidebar: React.FC = () => {
         <div className="h-[1px] w-full bg-neutral-200 dark:bg-neutral-800" />
       </div>
 
-      <div className="flex-1 overflow-y-auto custom-sidebar-scrollbar pr-1 pb-4">
+      <div className="flex-1 overflow-y-auto custom-sidebar-scrollbar pr-1 pb-2">
         <NavigationList variant="sidebar" />
       </div>
 
