@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { usePortfolio } from '../../../context/PortfolioContext';
 import { creatorProfile, creationsTranslations } from './data/creationsData';
-import { VideoGrid } from './sections/VideoGrid';
+// import { VideoGrid } from './sections/VideoGrid'; // Re-enable when channel goes live
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function CreationsPage() {
@@ -22,12 +22,7 @@ export default function CreationsPage() {
     if (activeTab === 'TikTok') {
       return (
         <div className="bg-[#121215] text-white rounded-2xl p-3 px-5 flex items-center justify-center gap-2 select-none border border-neutral-800 shadow-md h-12 w-[165px]">
-          <svg viewBox="0 0 100 32" className="h-[21px] w-full" fill="currentColor">
-            <path d="M7.4 6c0 4.2-2.1 6.8-5.3 7.8v3.4c6-.2 8.4-3.5 9-6.9.1-1 .1-2.1.1-3.2V0H7.4v6z" fill="#00f2fe" />
-            <path d="M4.3 6.1C4.3 10.3 2.2 13 1 13.9v3.4c6-.1 8.3-3.4 9-6.8V0H4.3v6.1z" fill="#fe2c55" />
-            <path d="M4.3 0v10.5C4.3 14 6.8 17 9.5 17c1.3 0 2.5-.5 3.3-1.4v3.1c-.8.6-1.8.9-3 .1V24c0 3.3-2.7 6-6 6s-6-2.7-6-6V6c0-3.3 2.7-6 6-6h.5V0z" fill="white" />
-            <text x="35" y="24" fontFamily="sans-serif" fontWeight="900" fontSize="22" fill="white">TikTok</text>
-          </svg>
+          <span className="font-sans font-black text-sm tracking-wide">TikTok</span>
         </div>
       );
     } else {
@@ -52,7 +47,7 @@ export default function CreationsPage() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-3xl md:text-[38px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans"
+            className="text-3xl md:text-[32px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans"
             id="creations-title"
           >
             {t.title}
@@ -86,7 +81,7 @@ export default function CreationsPage() {
             onClick={() => setActiveTab('YouTube')}
             className={`relative flex-1 py-3 px-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2.5 transition-all duration-200 select-none cursor-pointer ${
               activeTab === 'YouTube'
-                ? 'text-neutral-950 dark:text-neutral-150 font-extrabold'
+                ? 'text-neutral-950 dark:text-white font-extrabold'
                 : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-850 dark:hover:text-neutral-200'
             }`}
           >
@@ -110,7 +105,7 @@ export default function CreationsPage() {
             onClick={() => setActiveTab('TikTok')}
             className={`relative flex-1 py-3 px-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2.5 transition-all duration-200 select-none cursor-pointer ${
               activeTab === 'TikTok'
-                ? 'text-neutral-950 dark:text-neutral-150 font-extrabold'
+                ? 'text-neutral-950 dark:text-white font-extrabold'
                 : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-850 dark:hover:text-neutral-200'
             }`}
           >
@@ -278,7 +273,27 @@ export default function CreationsPage() {
       </div>
 
       {/* 3. Feeds/Grid Container */}
-      <VideoGrid activeTab={activeTab} />
+
+      {/* ─────────────────────────────────────────────────────────────────────
+          VIDEO GRID — COMMENTED OUT (do not delete, re-enable on channel launch)
+          <VideoGrid activeTab={activeTab} />
+         ───────────────────────────────────────────────────────────────────── */}
+
+      {/* Coming Soon placeholder */}
+      <div className="flex flex-col items-center justify-center py-20 md:py-28 text-center space-y-3 select-none">
+        <div className="w-12 h-12 mb-2 rounded-2xl bg-yellow-400/10 border border-yellow-400/30 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
+        <h3 className="text-xl md:text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans">
+          Coming Soon
+        </h3>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400 font-normal max-w-xs">
+          Video content is currently in production.
+        </p>
+      </div>
     </div>
   );
 }

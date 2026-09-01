@@ -68,40 +68,40 @@ export interface CreationsTranslations {
 }
 
 export const creatorProfile: CreatorProfile = {
-  username: "satriaabaharii",
-  fullName: "Satria Bahari",
-  avatar: "/src/assets/images/satria_avatar_1781003795518.png",
-  email: "satriabahari.dev@gmail.com",
-  tiktokUrl: "https://www.tiktok.com/@satriaabaharii",
-  youtubeUrl: "https://www.youtube.com/@satriaabaharii",
+  username: "M.subhan",
+  fullName: "Muhammad Subhan",
+  avatar: "/src/assets/images/Profileimg.jpg",
+  email: "m.subhan8661@gmail.com",
+  tiktokUrl: "",
+  youtubeUrl: "",
   bio: {
     US: [
-      "Software Engineer",
+      "AI Engineer",
       "Building scalable apps",
       "Sharing daily tech tips & tricks"
     ],
     ID: [
-      "Software Engineer",
-      "Scalable apps banana",
+      "AI Engineer",
+      "Scalable apps bana rha hun",
       "Rozana tech tips aur tricks share karna"
     ]
   },
   stats: {
     TikTok: {
-      followers: { value: "2.8K", label: { US: "Followers", ID: "Followers" } },
-      following: { value: "81", label: { US: "Following", ID: "Following" } },
-      likes: { value: "105.8K", label: { US: "Likes", ID: "Likes" } },
-      totalViews: { value: "1.6M", label: { US: "Total Views", ID: "Total Views" } },
-      totalComments: { value: "1.4K", label: { US: "Total Comments", ID: "Total Comments" } },
-      totalShares: { value: "7.8K", label: { US: "Total Shares", ID: "Total Shares" } }
+      followers: { value: "Null", label: { US: "Followers", ID: "Followers" } },
+      following: { value: "Null", label: { US: "Following", ID: "Following" } },
+      likes: { value: "Null", label: { US: "Likes", ID: "Likes" } },
+      totalViews: { value: "Null", label: { US: "Total Views", ID: "Total Views" } },
+      totalComments: { value: "Null", label: { US: "Total Comments", ID: "Total Comments" } },
+      totalShares: { value: "Null", label: { US: "Total Shares", ID: "Total Shares" } }
     },
     YouTube: {
-      followers: { value: "12.5K", label: { US: "Subscribers", ID: "Subscribers" } },
-      following: { value: "142", label: { US: "Videos", ID: "Videos" } },
-      likes: { value: "48.2K", label: { US: "Likes", ID: "Likes" } },
-      totalViews: { value: "1.2M", label: { US: "Total Views", ID: "Total Views" } },
-      totalComments: { value: "14.5K", label: { US: "Total Comments", ID: "Total Comments" } },
-      totalShares: { value: "8.4K", label: { US: "Total Shares", ID: "Total Shares" } }
+      followers: { value: "Null", label: { US: "Subscribers", ID: "Subscribers" } },
+      following: { value: "Null", label: { US: "Videos", ID: "Videos" } },
+      likes: { value: "Null", label: { US: "Likes", ID: "Likes" } },
+      totalViews: { value: "Null", label: { US: "Total Views", ID: "Total Views" } },
+      totalComments: { value: "Null", label: { US: "Total Comments", ID: "Total Comments" } },
+      totalShares: { value: "Null", label: { US: "Total Shares", ID: "Total Shares" } }
     }
   }
 };
