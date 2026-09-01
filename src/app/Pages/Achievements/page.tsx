@@ -16,7 +16,7 @@ export default function AchievementsPage() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-3xl md:text-[38px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans text-left"
+            className="text-3xl md:text-[32px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans text-left"
             id="achievements-title"
           >
             {t.title}

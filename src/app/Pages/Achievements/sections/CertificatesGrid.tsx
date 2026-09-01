@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { usePortfolio } from '../../../../context/PortfolioContext';
 import { achievementsData, achievementsTranslations, Achievement } from '../data/achievementsData';
-import { Search, ExternalLink, Filter, Plus, X, Award, Eye } from 'lucide-react';
+import { Search, Filter, X, Award, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const CertificatesGrid: React.FC = () => {
@@ -56,7 +56,7 @@ export const CertificatesGrid: React.FC = () => {
         <img 
           src={ach.imageUrl} 
           alt={ach.title[lang]} 
-          className="w-full h-full object-cover"
+          className="w-full h-full"
           referrerPolicy="no-referrer"
         />
       );
@@ -79,10 +79,10 @@ export const CertificatesGrid: React.FC = () => {
               {/* Top part: branding logo */}
               <div className="flex items-center gap-1.5">
                 <div className="w-5 h-5 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-serif text-[11px] font-black">
-                  P
+                  A
                 </div>
                 <span className="text-[12.5px] font-black font-sans tracking-tight text-neutral-800 dark:text-neutral-200">
-                  Parto.id
+                  Arswift
                 </span>
               </div>
 
@@ -93,16 +93,16 @@ export const CertificatesGrid: React.FC = () => {
                 </h3>
                 <div className="w-10 h-[2px] bg-amber-400" />
                 <p className="text-[10px] text-neutral-400 font-sans tracking-wider font-semibold uppercase mt-1">
-                  {lang === 'US' ? 'PRO INTERNSHIP' : 'PROFESSIONAL INTERNSHIP'}
+                  {lang === 'US' ? 'Fullstack Internship' : 'Fullstack Internship'}
                 </p>
                 <div className="text-[11px] font-serif font-black text-neutral-800 dark:text-neutral-100 italic mt-1.5">
-                  Satria Bahari
+                  M.subhan
                 </div>
               </div>
 
               {/* Bottom minor signators mockup */}
               <div className="flex items-center gap-3 text-[5.5px] text-neutral-401 font-mono uppercase bg-neutral-100/60 dark:bg-neutral-800/40 p-1 rounded max-w-[170px]">
-                <div>CEO PARTONET CO.</div>
+                <div>CEO Arswift Technologies (PVT) Ltd.</div>
                 <div className="text-zinc-300 dark:text-zinc-650">|</div>
                 <div>ID: {credentialId.slice(0, 10)}...</div>
               </div>
@@ -125,20 +125,20 @@ export const CertificatesGrid: React.FC = () => {
                 </svg>
               </div>
               <span className="text-[11px] font-black tracking-tight text-blue-950 dark:text-blue-200">
-                BuildWithAngga
+                Arswift
               </span>
             </div>
 
             {/* Center: Awarded candidate name */}
             <div className="pl-2 space-y-1.5 my-auto">
               <span className="text-[5.5px] uppercase tracking-widest text-neutral-400 font-bold block">
-                Certificate of Competency
+                Certificate of internship
               </span>
               <h3 className="text-base sm:text-[17px] font-black font-sans text-blue-600 leading-none">
-                Satria Bahari
+                M.subhan
               </h3>
               <p className="text-[7.5px] text-zinc-500 dark:text-zinc-400 line-clamp-1 max-w-[190px]">
-                "Ebook Petunjuk Pro: Freelance Web Developer & Kerja Remote"
+                "Fullstack developer intern"
               </p>
             </div>
 
@@ -182,10 +182,10 @@ export const CertificatesGrid: React.FC = () => {
             {/* Center block */}
             <div className="my-auto z-10 px-1 space-y-1 max-w-[200px]">
               <div className="text-[9px] font-bold text-neutral-800 dark:text-slate-100">
-                Satria Bahari
+                M.subhan
               </div>
               <p className="text-[7.5px] text-zinc-400 dark:text-zinc-500 font-sans leading-relaxed line-clamp-2">
-                Belajar Membuat Aplikasi Android dengan Jetpack Compose
+               Fullstack internship 
               </p>
             </div>
 
@@ -285,16 +285,21 @@ export const CertificatesGrid: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.25 }}
-                className="group flex flex-col rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-[#f8f9fa] dark:bg-[#111113]/30 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.01]"
+                onClick={() => setActiveViewerCert(ach)}
+                className="group flex flex-col rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-[#f8f9fa] dark:bg-[#111113]/30 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.01] cursor-pointer"
               >
                 {/* 1. TOP ASPECT IMAGE/CERTIFICATE CANVAS */}
                 <div className="relative aspect-[3/2] overflow-hidden bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-205 dark:border-neutral-800">
                   {renderCertificateArt(ach)}
 
-                  {/* Glass overlay on hover */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+                  {/* Glass overlay on hover - covering full canvas container explicitly */}
+                  <div className="absolute inset-0 z-20 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
                     <button
-                      onClick={() => setActiveViewerCert(ach)}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveViewerCert(ach);
+                      }}
                       className="px-3.5 py-1.5 bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-xl text-xs font-bold inline-flex items-center gap-1.5 shadow-sm transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-white/30 active:scale-95 cursor-pointer"
                     >
                       <Eye size={12} />
@@ -339,29 +344,7 @@ export const CertificatesGrid: React.FC = () => {
                     <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider font-sans select-none">
                       {displayDate}
                     </span>
-
-                    {/* Link button */}
-                    <a
-                      href={ach.certificateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-1 bg-white hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded-lg text-neutral-400 hover:text-amber-500 transition-colors border border-neutral-200/50 dark:border-neutral-800/50 shadow-sm cursor-pointer"
-                      title="Verify Certificate"
-                    >
-                      <ExternalLink size={12} />
-                    </a>
                   </div>
-                </div>
-
-                {/* Bottom plus detail block overlaying extreme bottom corner */}
-                <div className="px-5 pb-5 pt-0 mt-[-10px]">
-                  <button
-                    onClick={() => setActiveViewerCert(ach)}
-                    className="w-7 h-7 rounded-full border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-400 hover:text-neutral-950 dark:hover:text-[#111113] active:scale-95 transition-all cursor-pointer bg-white"
-                    title="View larger"
-                  >
-                    <Plus size={13} strokeWidth={2.5} />
-                  </button>
                 </div>
               </motion.div>
             );
@@ -384,7 +367,7 @@ export const CertificatesGrid: React.FC = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
               transition={{ type: 'spring', damping: 25, stiffness: 210 }}
-              className="relative bg-white dark:bg-[#111113] border border-neutral-200 dark:border-neutral-800 rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl p-6 md:p-8 space-y-6 text-left"
+              className="relative bg-white dark:bg-[#111113] border border-neutral-200 dark:border-neutral-800 rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl p-6 md:p-6 space-y-8 text-left max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Top Row Title & Dismiss */}
@@ -402,6 +385,7 @@ export const CertificatesGrid: React.FC = () => {
                 </div>
 
                 <button
+                  type="button"
                   onClick={() => setActiveViewerCert(null)}
                   className="p-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors border border-transparent hover:border-neutral-200/60 cursor-pointer"
                 >
@@ -410,37 +394,10 @@ export const CertificatesGrid: React.FC = () => {
               </div>
 
               {/* Certificate Virtual Canvas representation inside Lightbox Modal */}
-              <div className="aspect-[3/2] border border-dashed border-neutral-300 dark:border-neutral-700/80 rounded-2xl relative overflow-hidden bg-neutral-50 dark:bg-neutral-900 shadow-inner flex items-center justify-center p-2">
+              <div className="w-full h-[280px] sm:h-[390px] border border-dashed border-neutral-300 dark:border-neutral-700/80 rounded-2xl relative overflow-hidden bg-neutral-50 dark:bg-neutral-900 shadow-inner flex items-center justify-center p-2">
                 <div className="w-full h-full rounded-xl overflow-hidden">
                   {renderCertificateArt(activeViewerCert)}
                 </div>
-              </div>
-
-              {/* Verified Badge Metadata block */}
-              <div className="p-4 bg-neutral-50 dark:bg-neutral-900/20 border border-neutral-200/60 dark:border-neutral-800/45 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-amber-400/20 text-amber-500 flex items-center justify-center shrink-0">
-                    <Award size={20} />
-                  </div>
-                  <div>
-                    <h4 className="text-[13.5px] font-bold text-neutral-800 dark:text-neutral-200">
-                      Verified Competency Badge
-                    </h4>
-                    <p className="text-xs text-neutral-400">
-                      This certificate is fully verified and registered by the issuer.
-                    </p>
-                  </div>
-                </div>
-
-                <a
-                  href={activeViewerCert.certificateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-4 py-2 bg-amber-400 hover:bg-amber-500 text-neutral-950 rounded-xl font-bold text-xs inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
-                >
-                  <span>Verify Credential</span>
-                  <ExternalLink size={12} strokeWidth={2.5} />
-                </a>
               </div>
             </motion.div>
           </motion.div>

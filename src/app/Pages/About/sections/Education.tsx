@@ -46,11 +46,11 @@ export const Education: React.FC = () => {
             >
               <div className="flex gap-6">
                 {/* Brand Logo Container */}
-                <div className="w-15 h-15 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-sm">
+                <div className="w-15 h-15 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white flex-shrink-0 flex items-center justify-center overflow-hidden shadow-sm">
                   <img
                     src={item.logo}
                     alt={item.company}
-                    className="w-full h-full object-contain"
+                    className="w-12 h-12 object-contain"
                   />
                 </div>
 

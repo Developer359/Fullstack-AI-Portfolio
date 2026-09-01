@@ -280,7 +280,7 @@ export default function CreationsPage() {
          ───────────────────────────────────────────────────────────────────── */}
 
       {/* Coming Soon placeholder */}
-      <div className="flex flex-col items-center justify-center py-20 md:py-28 text-center space-y-3 select-none">
+      <div className="flex flex-col items-center justify-center py-20 md:py-20 text-center space-y-3 select-none">
         <div className="w-12 h-12 mb-2 rounded-2xl bg-yellow-400/10 border border-yellow-400/30 flex items-center justify-center">
           <svg viewBox="0 0 24 24" className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="10" />

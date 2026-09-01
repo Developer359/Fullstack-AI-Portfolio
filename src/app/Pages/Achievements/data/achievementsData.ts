@@ -1,15 +1,17 @@
+import corvitCert from '/src/assets/Certificate/Corvit.jpg';
+
 export interface Achievement {
   id: string;
   credentialId: string;
   title: Record<'US' | 'ID', string>;
   issuer: string;
-  type: string; // e.g. "Professional", "Course"
-  category: string; // e.g. "Backend", "Freelance", "Mobile"
-  issuedDate: Record<'US' | 'ID', string>; // e.g. "ISSUED ON JULY 2025" or "DITERBITKAN PADA JULI 2025"
+  type: string; 
+  category: string; 
+  issuedDate: Record<'US' | 'ID', string>; 
   certificateUrl: string;
-  imageUrl?: string; // Optional raw image if it comes from database/backend
+  imageUrl?: string; 
   mockStyle: {
-    themeColor: string; // Tailwind color class or hex string
+    themeColor: string; 
     gradientFrom: string;
     gradientTo: string;
     logoType: 'parto' | 'bwa' | 'dicoding' | 'generic';
@@ -32,21 +34,21 @@ export interface AchievementsTranslations {
 export const achievementsData: Achievement[] = [
   {
     id: "ach-1",
-    credentialId: "196/EKS/HCLGA/ATI/VIII/2025",
+    credentialId: "ARSWIFT-INT-2026",
     title: {
-      US: "Backend Developer Internship - Parto.id",
-      ID: "Backend Developer Internship - Parto.id"
+      US: "Full-Stack Developer Internship",
+      ID: "Full-Stack Developer Internship"
     },
-    issuer: "Affan Technology Indonesia",
-    type: "Professional",
-    category: "Backend",
+    issuer: "Arswift Technologies",
+    type: "Internship",
+    category: "Full Stack",
     issuedDate: {
-      US: "ISSUED ON JULY 2025",
-      ID: "Jari Kiya Gaya July 2025"
+      US: "ISSUED ON MAY 2026",
+      ID: "Jari Kiya Gaya May 2026"
     },
-    certificateUrl: "https://parto.id",
+    certificateUrl: "#",
     mockStyle: {
-      themeColor: "#15803d", // Green-700
+      themeColor: "#15803d",
       gradientFrom: "from-emerald-500/10",
       gradientTo: "to-emerald-100/30",
       logoType: "parto",
@@ -55,162 +57,25 @@ export const achievementsData: Achievement[] = [
   },
   {
     id: "ach-2",
-    credentialId: "BWA-FWD-9921D",
+    credentialId: "CORVIT-FS-2025",
     title: {
-      US: "E-book Petunjuk Pro: Freelance Web Developer & Kerja Remote",
-      ID: "E-book Petunjuk Pro: Freelance Web Developer & Kerja Remote"
+      US: "Full-Stack Web Development Course",
+      ID: "Full-Stack Web Development Course"
     },
-    issuer: "Build With Angga",
+    issuer: "Corvit Systems",
     type: "Course",
-    category: "Freelance",
+    category: "Full Stack",
     issuedDate: {
-      US: "ISSUED ON SEPTEMBER 2025",
-      ID: "Jari Kiya Gaya September 2025"
+      US: "ISSUED ON DEC 20, 2025",
+      ID: "Jari Kiya Gaya 20 Dec 2025"
     },
-    certificateUrl: "https://buildwithangga.com",
+    certificateUrl: "#",
+    imageUrl: corvitCert,
     mockStyle: {
-      themeColor: "#0252e3", // BWA Blue
+      themeColor: "#0252e3", 
       gradientFrom: "from-blue-600/10",
       gradientTo: "to-blue-100/25",
       logoType: "bwa",
-      layoutPattern: "minimal"
-    }
-  },
-  {
-    id: "ach-3",
-    credentialId: "81P2LGL38ZOY",
-    title: {
-      US: "Belajar Membuat Aplikasi Android dengan Jetpack Compose",
-      ID: "Jetpack Compose ke sath Android App Banana Seekhein"
-    },
-    issuer: "Dicoding Indonesia",
-    type: "Course",
-    category: "Mobile",
-    issuedDate: {
-      US: "ISSUED ON JANUARY 2025",
-      ID: "Jari Kiya Gaya January 2025"
-    },
-    certificateUrl: "https://dicoding.com",
-    mockStyle: {
-      themeColor: "#1a1e29", // Dicoding Dark
-      gradientFrom: "from-neutral-800/10",
-      gradientTo: "to-neutral-100/30",
-      logoType: "dicoding",
-      layoutPattern: "badge"
-    }
-  },
-  {
-    id: "ach-4",
-    credentialId: "102/CLOUD-ARCH/GCP-VIII/2025",
-    title: {
-      US: "Google Cloud Associate Engineer Course",
-      ID: "Google Cloud Associate Engineer Course"
-    },
-    issuer: "Dicoding Indonesia",
-    type: "Course",
-    category: "Cloud",
-    issuedDate: {
-      US: "ISSUED ON MARCH 2025",
-      ID: "Jari Kiya Gaya March 2025"
-    },
-    certificateUrl: "https://dicoding.com",
-    mockStyle: {
-      themeColor: "#4285F4", // GCP Blue
-      gradientFrom: "from-sky-500/10",
-      gradientTo: "to-sky-100/30",
-      logoType: "dicoding",
-      layoutPattern: "badge"
-    }
-  },
-  {
-    id: "ach-5",
-    credentialId: "FT-FS-REACT-2025",
-    title: {
-      US: "Fullstack Web Development with React and Node.js",
-      ID: "React aur Node.js ke sath Fullstack Web Development"
-    },
-    issuer: "Affan Technology Indonesia",
-    type: "Professional",
-    category: "Fullstack",
-    issuedDate: {
-      US: "ISSUED ON NOVEMBER 2025",
-      ID: "Jari Kiya Gaya November 2025"
-    },
-    certificateUrl: "https://parto.id",
-    mockStyle: {
-      themeColor: "#61dafb", // React Cyan
-      gradientFrom: "from-cyan-500/10",
-      gradientTo: "to-cyan-100/30",
-      logoType: "parto",
-      layoutPattern: "leaf"
-    }
-  },
-  {
-    id: "ach-6",
-    credentialId: "NDH-2025-X89",
-    title: {
-      US: "Top 50 Nusantara Developer Hackathon",
-      ID: "Nusantara Developer Hackathon ke Top 50"
-    },
-    issuer: "Nusantara Dev",
-    type: "Medal",
-    category: "Fullstack",
-    issuedDate: {
-      US: "ISSUED ON JUNE 2025",
-      ID: "Jari Kiya Gaya June 2025"
-    },
-    certificateUrl: "https://hackathon.nusantara.dev",
-    mockStyle: {
-      themeColor: "#eab308", // Amber
-      gradientFrom: "from-amber-500/10",
-      gradientTo: "to-amber-100/30",
-      logoType: "generic",
-      layoutPattern: "badge"
-    }
-  },
-  {
-    id: "ach-7",
-    credentialId: "GACP-2024-C32",
-    title: {
-      US: "Google Android Cloud Associate Certification",
-      ID: "Google Android Cloud Associate Certification"
-    },
-    issuer: "Google",
-    type: "Award",
-    category: "Mobile",
-    issuedDate: {
-      US: "ISSUED ON DECEMBER 2024",
-      ID: "Jari Kiya Gaya December 2024"
-    },
-    certificateUrl: "https://cloud.google.com",
-    mockStyle: {
-      themeColor: "#3b82f6", // Blue
-      gradientFrom: "from-blue-500/10",
-      gradientTo: "to-blue-100/30",
-      logoType: "generic",
-      layoutPattern: "badge"
-    }
-  },
-  {
-    id: "ach-8",
-    credentialId: "GCA-2023-Z15",
-    title: {
-      US: "10k+ Developer Community Growth Award",
-      ID: "10k+ Developer Community Growth Award"
-    },
-    issuer: "Community",
-    type: "Sparkles",
-    category: "Freelance",
-    issuedDate: {
-      US: "ISSUED ON OCTOBER 2023",
-      ID: "Jari Kiya Gaya October 2023"
-    },
-    certificateUrl: "https://community.dev",
-    mockStyle: {
-      themeColor: "#ec4899", // Pink
-      gradientFrom: "from-pink-500/10",
-      gradientTo: "to-pink-100/30",
-      logoType: "generic",
       layoutPattern: "minimal"
     }
   }
