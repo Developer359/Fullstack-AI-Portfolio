@@ -3,6 +3,7 @@ import { usePortfolio } from '../../../context/PortfolioContext';
 import { guestbookTranslations } from './data/guestbookData';
 import { SignBoard } from './sections/SignBoard';
 import { motion } from 'motion/react';
+import { Clock } from 'lucide-react';
 
 export default function GuestbookPage() {
   const { lang } = usePortfolio();
@@ -17,7 +18,7 @@ export default function GuestbookPage() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-3xl md:text-[38px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans text-left"
+            className="text-3xl md:text-[32px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans text-left"
             id="guestbook-head-title"
           >
             {t.title}
@@ -43,9 +44,31 @@ export default function GuestbookPage() {
         />
       </section>
 
-      {/* 2. SignBoard Chat board */}
-      <SignBoard />
+      {/* 2. SignBoard Chat board (Commented out) */}
+      {/* <SignBoard /> */}
+
+      {/* 3. Coming Soon Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.4 }}
+        className="flex flex-col items-center justify-center py-32 px-4 text-center space-y-4"
+        id="guestbook-coming-soon"
+      >
+        <div className="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200/60 dark:border-amber-500/20 flex items-center justify-center text-amber-500 shadow-sm">
+          <Clock className="w-6 h-6" />
+        </div>
+        <div className="space-y-1">
+          <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50 tracking-tight font-sans">
+            Coming Soon
+          </h3>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 font-sans">
+            Guestbook feature is currently in production.
+          </p>
+        </div>
+      </motion.div>
     </div>
   );
 }
+
 export { GuestbookPage };
