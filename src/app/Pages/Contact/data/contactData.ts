@@ -58,7 +58,7 @@ export const socialCardsData: SocialCard[] = [
       US: "Go to Instagram",
       ID: "Instagram Kholein"
     },
-    url: "https://instagram.com/satriabahari",
+    url: "https://www.instagram.com/",
     brandType: "instagram",
     gradientClass: "bg-gradient-to-br from-[#8a3ab9] via-[#e95950] to-[#fccc63]"
   },
@@ -76,7 +76,7 @@ export const socialCardsData: SocialCard[] = [
       US: "Go to Linkedin",
       ID: "LinkedIn Kholein"
     },
-    url: "https://linkedin.com/in/satria-bahari",
+    url: "https://www.linkedin.com/in/muhammad-subhan-05b895331/",
     brandType: "linkedin",
     gradientClass: "bg-gradient-to-br from-[#0a66c2] via-[#005c99] to-[#003d66]"
   },
@@ -94,7 +94,7 @@ export const socialCardsData: SocialCard[] = [
       US: "Go to Tiktok",
       ID: "TikTok Kholein"
     },
-    url: "https://tiktok.com/@satriabahari",
+    url: "https://www.tiktok.com/",
     brandType: "tiktok",
     gradientClass: "bg-gradient-to-br from-[#252528] via-[#151516] to-[#09090a]"
   },
@@ -112,7 +112,7 @@ export const socialCardsData: SocialCard[] = [
       US: "Go to Github",
       ID: "GitHub Kholein"
     },
-    url: "https://github.com/satriabahari",
+    url: "https://github.com/Developer359",
     brandType: "github",
     gradientClass: "bg-gradient-to-br from-[#0c1222] via-[#111827] to-[#1e1b4b]"
   }

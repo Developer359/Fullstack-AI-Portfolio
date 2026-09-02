@@ -40,7 +40,7 @@ export default function ContactPage() {
         return (
           <svg viewBox="0 0 100 100" className="w-14 h-14 md:w-[68px] md:h-[68px] text-white/95 shrink-0" fill="currentColor">
             <rect x="5" y="5" width="90" height="90" rx="22" fill="none" stroke="currentColor" strokeWidth="8"/>
-            <path d="M68 25 c-5 0 -11 3 -14 7 v-17 h-11 v46 c0 7 -6 13 -13 13 s-13 -6 -13 -13 s6 -13 13 -13 c3 0 5 1 7 2 v-11 c-2 -1 -5 -1 -7 -1 c-13 0 -24 11 -24 24 s11 24 24 24 s24 -11 24 -24 v-20 c4 3 9 5 15 5 v-11 c-8 0 -15-5 -15 -13 z" />
+            <path d="M62 18 c0 6 3 11 9 13 v9 c-3 0 -7 -1 -9 -3 v18 c0 10 -8 18 -18 18 s-18 -8 -18 -18 s8 -18 18 -18 c1 0 2 0 3 0 v9 c-1 0 -2 -0.1 -3 -0.1 c-5 0 -9 4 -9 9 s4 9 9 9 s9 -4 9 -9 V18 z" />
           </svg>
         );
       case 'github':
@@ -82,7 +82,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-3xl md:text-[38px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans text-left"
+            className="text-3xl md:text-[32px] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-sans text-left"
             id="contact-title"
           >
             {t.title}
@@ -121,6 +121,9 @@ export default function ContactPage() {
             const subtitle = card.subtitle[lang] || card.subtitle.US;
             const buttonText = card.buttonText[lang] || card.buttonText.US;
 
+            // Use Gmail web compose URL so it opens directly in browser web tab
+            const hrefValue = isGmail ? 'https://mail.google.com/mail/?view=cm&fs=1&to=m.subhan8661@gmail.com' : card.url;
+
             return (
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -129,7 +132,7 @@ export default function ContactPage() {
                 key={card.id}
                 className={`relative overflow-hidden rounded-[24px] p-6 md:p-7 flex ${
                   isGmail ? 'col-span-1 md:col-span-2' : 'col-span-1'
-                } ${card.gradientClass} text-white shadow-sm hover:shadow-lg transition-all duration-350 hover:scale-[1.01]`}
+                } ${card.gradientClass} text-white shadow-sm`}
               >
                 {/* Subtle background overlay circles */}
                 <div className="absolute right-0 top-0 w-32 h-32 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
@@ -147,10 +150,10 @@ export default function ContactPage() {
 
                   <div>
                     <a
-                      href={card.url}
+                      href={hrefValue}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs md:text-[13px] font-bold tracking-tight shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent cursor-pointer ${getButtonClass(
+                      className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs md:text-[13.5px] font-bold tracking-tight shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent cursor-pointer ${getButtonClass(
                         card.brandType
                       )}`}
                     >
