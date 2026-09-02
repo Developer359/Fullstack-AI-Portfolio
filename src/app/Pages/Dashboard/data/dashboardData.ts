@@ -5,6 +5,7 @@ export interface PinnedRepo {
   languageColor: string;
   stars: number;
   forks: number;
+  url: string;
 }
 
 export interface DashboardTranslations {
@@ -25,70 +26,75 @@ export interface DashboardTranslations {
 }
 
 export const githubStats = {
-  followers: 116,
+  followers: 2,
   following: 18,
-  repositories: 19,
-  contributions: 470,
-  thisWeek: 0,
-  bestDay: 50,
-  dailyAvg: "1"
+  repositories: 8,
+  contributions: 20,
+  thisWeek: 15,
+  bestDay: 12,
+  dailyAvg: "2"
 };
 
 export const pinnedReposData: PinnedRepo[] = [
   {
-    name: "satriabahari.my.id",
+    name: "Fullstack-AI-Portfolio",
     description: {
-      US: "🔥 Personal website & portfolio, built from scratch using Next.js, TypeScript, Tailwind CSS, SWR and Prisma.",
-      ID: "🔥 Zaati website aur portfolio, Next.js, TypeScript, Tailwind CSS, SWR aur Prisma ke sath shuru se banaya gaya."
-    },
-    language: "TypeScript",
-    languageColor: "#3178c6",
-    stars: 97,
-    forks: 28
-  },
-  {
-    name: "portfolio",
-    description: {
-      US: "⚡ Personal website & portfolio, built from scratch using Next.js, TypeScript, and Tailwind CSS",
-      ID: "⚡ Zaati website aur portfolio, Next.js, TypeScript aur Tailwind CSS ke sath shuru se banaya gaya."
+      US: "⚡ An elite full-stack portfolio showcasing end-to-end AI products, robust LLM orchestration, vector databases, and real-time streaming infrastructure.",
+      ID: "⚡ Aik behtareen full-stack portfolio jo end-to-end AI products, robust LLM orchestration aur vector databases ke sath display karta hai."
     },
     language: "TypeScript",
     languageColor: "#3178c6",
     stars: 3,
-    forks: 3
+    forks: 1,
+    url: "https://github.com/Developer359/Fullstack-AI-Portfolio"
   },
   {
-    name: "inventory-smart",
+    name: "AuraGallery",
     description: {
-      US: "📜 Web Smart Inventory adalah web menyajikan informasi visual dan data terkait product secara terpusat. Dashboard i...",
-      ID: "📜 Web Smart Inventory aik aisi web hai jo product ki visual maloomat aur data ko aik jagah pesh karti hai."
+      US: "📱 A privacy-first, serverless mobile image organizer that runs entirely offline using on-device machine learning for semantic vector searches.",
+      ID: "📱 Aik privacy-first mobile image organizer jo mukammal offline chalta hai on-device machine learning aur vector searches ke sath."
     },
-    language: "SCSS",
-    languageColor: "#c6538c",
-    stars: 3,
-    forks: 1
+    language: "TypeScript",
+    languageColor: "#3178c6",
+    stars: 1,
+    forks: 0,
+    url: "https://github.com/Developer359/AuraGallery"
   },
   {
-    name: "astronesia",
+    name: "Donate-WebSlte",
     description: {
-      US: "🚀 The Astronesia school website, as a final project for a software engineering course, was created from scratch usin...",
-      ID: "🚀 Astronesia school ki website, software engineering course ke aakhri project ke taur par shuru se banayi gayi..."
+      US: "🌍 A high-performance Next.js platform built for social impact, connecting donors with meaningful causes and disaster relief.",
+      ID: "🌍 Aik high-performance Next.js platform jo social impact ke liye banaya gaya hai, donors ko meaningful causes se jortay hue."
+    },
+    language: "JavaScript",
+    languageColor: "#f1e05a",
+    stars: 2,
+    forks: 1,
+    url: "https://github.com/Developer359/Donate-WebSIte"
+  },
+  {
+    name: "Resume-Checker",
+    description: {
+      US: "📄 Smart resume checker that gives instant feedback, scoring, and tips to boost your career opportunities.",
+      ID: "📄 Smart resume checker jo fori feedback aur tips deta hai aapke career ke opportunities barhanay ke liye."
+    },
+    language: "JavaScript",
+    languageColor: "#f1e05a",
+    stars: 2,
+    forks: 0,
+    url: "https://github.com/Developer359/Resume-Checker"
+  },
+  {
+    name: "AirSwift-landingPage",
+    description: {
+      US: "🚀 High-performance modern landing page built with Next.js and Tailwind CSS for corporate web applications.",
+      ID: "🚀 Next.js aur Tailwind CSS ke sath banaya gaya aik modern aur fast landing page web application."
     },
     language: "JavaScript",
     languageColor: "#f1e05a",
     stars: 1,
-    forks: 0
-  },
-  {
-    name: "himapres",
-    description: {
-      US: "🎓 Academic achievement and organization information system platform for student association.",
-      ID: "🎓 Student association ke liye academic achievement aur organization ki maloomat ka system platform."
-    },
-    language: "JavaScript",
-    languageColor: "#f1e05a",
-    stars: 1,
-    forks: 1
+    forks: 0,
+    url: "https://github.com/Developer359/AirSwift-landingPage"
   }
 ];
 
@@ -96,7 +102,7 @@ export const dashboardTranslations: Record<'US' | 'ID', DashboardTranslations> =
   US: {
     title: "GitHub Activity",
     subtitle: "Open source contributions, repositories, and coding activity over the past year.",
-    username: "@satriabahari",
+    username: "@Developer359",
     followers: "Followers",
     following: "Following",
     repositories: "Repositories",
@@ -112,7 +118,7 @@ export const dashboardTranslations: Record<'US' | 'ID', DashboardTranslations> =
   ID: {
     title: "GitHub Ki Sargarmi",
     subtitle: "Guzashta saal ki open source contributions, repositories aur coding activity.",
-    username: "@satriabahari",
+    username: "@Developer359",
     followers: "Followers",
     following: "Following",
     repositories: "Repositories",
