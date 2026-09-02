@@ -5,44 +5,44 @@ export interface BioLink {
     US: string;
     ID: string;
   };
-  iconName: 'Video' | 'Github' | 'Youtube' | 'Heart';
+  iconName: 'Video' | 'Github' | 'Youtube' | 'Heart' | 'Linkedin';
 }
 
 export const bioLinksList: BioLink[] = [
   { 
-    title: "Personal Channel (TikTok)", 
-    url: "https://tiktok.com/@satriabahari", 
+    title: "GitHub Profile", 
+    url: "https://github.com/Developer359", 
     desc: {
-      US: "Short programming tips & setups",
-      ID: "Tips & setup pemrograman video singkat"
-    }, 
-    iconName: "Video"
-  },
-  { 
-    title: "Nusantara Team GitHub Core", 
-    url: "https://github.com/satriabahari", 
-    desc: {
-      US: "Open source Android modules",
-      ID: "Modul Android sumber terbuka"
+      US: "Open source repositories & full-stack code",
+      ID: "Open source code aur repositories"
     }, 
     iconName: "Github" 
+  },
+  { 
+    title: "LinkedIn Professional", 
+    url: "https://www.linkedin.com/in/muhammad-subhan-05b895331/", 
+    desc: {
+      US: "Professional network & career journey",
+      ID: "Professional network aur career details"
+    }, 
+    iconName: "Linkedin" 
+  },
+  { 
+    title: "Personal Channel (TikTok)", 
+    url: "https://tiktok.com", 
+    desc: {
+      US: "Short programming tips & tech setups",
+      ID: "Chotay programming tips aur setup videos"
+    }, 
+    iconName: "Video"
   },
   { 
     title: "YouTube Coding Series", 
     url: "https://youtube.com", 
     desc: {
       US: "Long-form full-stack development tutorials",
-      ID: "Tutorial pengembangan full-stack video panjang"
+      ID: "Full-stack development ke long tutorials"
     }, 
     iconName: "Youtube" 
-  },
-  { 
-    title: "Support My Stream (SocioBuzz)", 
-    url: "https://sociobuzz.com", 
-    desc: {
-      US: "Help fund educational content!",
-      ID: "Bantu membiayai konten pendidikan kustom!"
-    }, 
-    iconName: "Heart" 
   }
 ];
