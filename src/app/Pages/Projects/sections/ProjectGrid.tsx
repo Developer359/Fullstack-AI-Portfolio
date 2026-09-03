@@ -14,17 +14,23 @@ const getNormalizeKey = (tag: string): string => {
 
 interface TechIconProps {
   tag: string;
+  /** 'sm' renders a compact 36px icon for card rows; default is 48px for detail views */
+  size?: 'sm' | 'default';
 }
 
 // Complete High Fidelity Vector Brands Maker
-export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
+export const TechIcon: React.FC<TechIconProps> = ({ tag, size = 'default' }) => {
   const norm = getNormalizeKey(tag);
+  // Sizing helpers — sm: 36px container / default: 48px container
+  const box = size === 'sm' ? 'w-9 h-9' : 'w-12 h-12';
+  const icon = size === 'sm' ? 'w-5 h-5' : 'w-8 h-8';
+  const iconSm = size === 'sm' ? 'w-5 h-5' : 'w-7 h-7';
 
   // 1. TypeScript
   if (norm === 'typescript' || norm === 'ts') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="TypeScript">
-        <svg viewBox="0 0 100 100" className="w-12 h-12 rounded-xl overflow-hidden shadow bg-[#3178c6] border border-[#235a96] hover:scale-105 transition-transform duration-200">
+        <svg viewBox="0 0 100 100" className={`${box} rounded-xl overflow-hidden shadow bg-[#3178c6] border border-[#235a96] hover:scale-105 transition-transform duration-200`}>
           <rect width="100" height="100" fill="#3178c6" />
           <text x="88" y="82" fill="white" fontSize="40" fontWeight="910" fontFamily="sans-serif" textAnchor="end">TS</text>
         </svg>
@@ -36,8 +42,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'tailwindcss' || norm === 'tailwind' || norm === 'tailwind css') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Tailwind CSS">
-        <div className="w-12 h-12 rounded-xl bg-[#0b1329] border border-[#0f244a] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-8 h-8 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#0b1329] border border-[#0f244a] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.335 6.182 14.974 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624.1.1.21.2.32.3 1.05 1.05 2.17 1.88 5.4 1.88 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624-.723-.734-2.084-2.114-5.058-2.114V12z" fill="#38bdf8" />
           </svg>
         </div>
@@ -46,11 +52,11 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   }
 
   // 3. React
-  if (norm === 'react' || norm === 'reactjs') {
+  if (norm === 'react' || norm === 'reactjs' || norm === 'react native') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="React">
-        <div className="w-12 h-12 rounded-xl bg-[#05131d] border border-[#0d2f44] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 100 100" className="w-8 h-8 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#05131d] border border-[#0d2f44] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 100 100" className={`${icon} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="4.5" fill="#61dafb" />
             <ellipse cx="50" cy="50" rx="36" ry="14" stroke="#61dafb" strokeWidth="3" transform="rotate(0 50 50)" />
             <ellipse cx="50" cy="50" rx="36" ry="14" stroke="#61dafb" strokeWidth="3" transform="rotate(60 50 50)" />
@@ -65,8 +71,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'next' || norm === 'nextjs') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Next.js">
-        <div className="w-12 h-12 rounded-xl bg-black border border-neutral-800 flex items-center justify-center shadow hover:scale-105 transition-transform duration-200 overflow-hidden p-1">
-          <svg viewBox="0 0 100 100" className="w-8 h-8 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-black border border-neutral-800 flex items-center justify-center shadow hover:scale-105 transition-transform duration-200 overflow-hidden p-1`}>
+          <svg viewBox="0 0 100 100" className={`${icon} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="48" fill="black" />
             <path d="M72.5 30L34 76.5H29.5V23.5H35V61L67 23.5H72.5V30Z" fill="url(#nextjs-grad-id)" />
             <rect x="67" y="23.5" width="5.5" height="42.5" fill="white" />
@@ -87,8 +93,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'supabase') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Supabase">
-        <div className="w-12 h-12 rounded-xl bg-[#121c16] border border-[#1b3d2b] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#121c16] border border-[#1b3d2b] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <path d="M21.362 9.354H12.87v-5.26a1.43 1.43 0 0 0-2.39-1.077L2.473 10.334a1.865 1.865 0 0 0 1.258 3.197h8.492v5.26a1.43 1.43 0 0 0 2.39 1.077l8.007-7.317a1.865 1.865 0 0 0-1.258-3.197z" fill="#3ecf8e" />
           </svg>
         </div>
@@ -100,8 +106,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'postgresql' || norm === 'postgres') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="PostgreSQL">
-        <div className="w-12 h-12 rounded-xl bg-[#15202e] border border-[#213a52] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 64 64" className="w-8 h-8">
+        <div className={`${box} rounded-xl bg-[#15202e] border border-[#213a52] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 64 64" className={icon}>
             <path d="M47.2 26.3c-.6-.7-1.4-1.2-2.1-1.6-.7-.4-1.4-.7-2.1-1.1-1.4-.7-2.8-1.4-4.2-2.1-1.4-.7-2.7-1.7-3.9-2.8-1.2-1.1-2.2-2.4-3-3.9-.8-1.5-1.2-3.1-1.3-4.8 0-.9-.1-1.7-.1-2.6 0-.8-.1-1.6-.5-2.2-.4-.6-.9-1.1-1.6-1.5-.7-.4-1.5-.6-2.4-.6h-.6c-.9 0-1.7.2-2.4.6-.7.4-1.2.9-1.6 1.5-.4.6-.5 1.4-.5 2.2 0 .9-.1 1.7-.1 2.6 0 1.7-.5 3.3-1.3 4.8-.8 1.5-1.8 2.8-3 3.9-1.2 1.1-2.5 2.1-3.9 2.8-1.4.7-2.8 1.4-4.2 2.1-.7.4-1.4.7-2.1 1.1-.7.4-1.5.9-2.1 1.6-1.3 1.5-2 3.4-2.1 5.3 0 .1 0 .2.1.2s.2 0 .2-.1c.3-.5.7-1.1 1.1-1.4.4-.4.9-.8 1.4-1 .9-.4 1.9-.6 2.9-.6 1.9 0 3.7.8 5 2.1 1.2 1.3 2.1 3.1 2.1 5s-.8 3.7-2.1 5c-1.3 1.2-3.1 2.1-5 2.1-1 0-2-.2-2.9-.6-.5-.2-1-.6-1.4-1-.4-.4-.8-.9-1.1-1.4 0-.1-.1-.1-.2-.1s-.1.1-.1.2c.1 1.9.8 3.8 2.1 5.3.6.7 1.4 1.2 2.1 1.6.7.4 1.4.7 2.1 1.1 1.4.7 2.8 1.4 4.2 2.1 1.4.7 2.7 1.7 3.9 2.8 1.2 1.1 2.2 2.4 3 3.9.8 1.5 1.2 3.1 1.3 4.8 0 .9.1 1.7.1 2.6 0 .8.1 1.6.5 2.2.4.6.9 1.1 1.6 1.5.7.4 1.5.6 2.4.6h.6c.9 0 1.7-.2 2.4-.6.7-.4 1.2-.9 1.6-.1.5 0 1.4-.5 1.5-.7L47.2 26.3z" fill="#336791" />
           </svg>
         </div>
@@ -113,7 +119,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'kotlin') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Kotlin">
-        <div className="w-12 h-12 rounded-xl bg-[#1d143c] border border-[#3e1f7d] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
+        <div className={`${box} rounded-xl bg-[#1d143c] border border-[#3e1f7d] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
           <svg viewBox="0 0 24 24" className="w-7 h-7">
             <defs>
               <linearGradient id="kotlin-grad-p" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -133,8 +139,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'dart') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Dart">
-        <div className="w-12 h-12 rounded-xl bg-[#0c1f2e] border border-[#0d4e68] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#0c1f2e] border border-[#0d4e68] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L4 10l8 8 8-8-8-8z" fill="#00B4AB" />
             <path d="M4 10H12V18" stroke="#00796B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -147,8 +153,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'flutter') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Flutter">
-        <div className="w-12 h-12 rounded-xl bg-[#06152a] border border-[#093563] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#06152a] border border-[#093563] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <path d="M14.3 2.3L5 11.6l4.7 4.7 9.3-9.3z" fill="#40D0FD" />
             <path d="M14.3 16.3L9.7 20.9 5 16.3l4.7-4.7z" fill="#02569B" />
             <path d="M19 11.6L14.3 7 9.7 11.6l4.6 4.7z" fill="#02569B" />
@@ -162,8 +168,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'laravel') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Laravel">
-        <div className="w-12 h-12 rounded-xl bg-[#240e11] border border-[#5c131a] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#240e11] border border-[#5c131a] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <path d="M19 12V3h-6V1h8v11h-2zM11 23V8H5v15h6zM13 19h4v-7h-4s.5-4 4-4" stroke="#FF2D20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
@@ -175,7 +181,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'firebase' || norm === 'firebasefirestore') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Firebase">
-        <div className="w-12 h-12 rounded-xl bg-[#231d11] border border-[#523d1d] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
+        <div className={`${box} rounded-xl bg-[#231d11] border border-[#523d1d] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
           <svg viewBox="0 0 24 24" className="w-7 h-7">
             <path d="M3.877 18.006l8.03-14.7a.5.5 0 0 1 .893 0l2.362 4.331-1.393.74L12 4.908l-7.391 13.54a.5.5 0 0 1-.732.158zm16.246 0L12 4.908v13.54a.5.5 0 0 0 .732.442l7.391-4.043a.5.5 0 0 0 0-.885z" fill="#FFA000" />
             <path d="M12 4.908l-5.645 10.33a.5.5 0 0 1-.734.22L2 13.003V18.1a.5.5 0 0 0 .736.442l17.264-9.456a.5.5 0 0 0 0-.885L12 4.908z" fill="#F57C00" />
@@ -189,8 +195,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'android' || norm === 'androidsdk') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Android SDK">
-        <div className="w-12 h-12 rounded-xl bg-[#0f1f18] border border-[#1d502f] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7" fill="#3DDC84">
+        <div className={`${box} rounded-xl bg-[#0f1f18] border border-[#1d502f] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm}`} fill="#3DDC84">
             <path d="M17.6 9.48a1 1 0 0 0-1-.88h-1.12l-1.41-3.66a.5.5 0 0 0-.94.36L14.4 8.6H9.6L10.87 5.3a.5.5 0 0 0-.94-.36l-1.41 3.66H7.4a1 1 0 0 0-1 .88l-.4 5.2a1 1 0 0 0 1 .88h1.2v3.66a1.2 1.2 0 0 0 2.4 0V15.2h2.8v3.66a1.2 1.2 0 0 0 2.4 0V15.2h1.2a1 1 0 0 0 1-.88l-.4-5.2zM9 11.6a.6.6 0 1 1 .6-.6.6.6 0 0 1-.6.6zm6 0a.6.6 0 1 1 .6-.6.6.6 0 0 1-.6.6z" />
           </svg>
         </div>
@@ -202,7 +208,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'swr') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="SWR">
-        <div className="w-12 h-12 rounded-xl bg-black border border-neutral-800 flex items-center justify-center shadow font-black text-white text-[10px] font-mono hover:scale-105 transition-transform duration-200">
+        <div className={`${box} rounded-xl bg-black border border-neutral-800 flex items-center justify-center shadow font-black text-white ${size === 'sm' ? 'text-[8px]' : 'text-[10px]'} font-mono hover:scale-105 transition-transform duration-200`}>
           SWR
         </div>
       </span>
@@ -213,7 +219,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'prisma') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Prisma">
-        <div className="w-12 h-12 rounded-xl bg-[#081824] border border-[#0c314b] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
+        <div className={`${box} rounded-xl bg-[#081824] border border-[#0c314b] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
           <svg viewBox="0 0 24 24" className="w-7 h-7">
             <path d="M12 2L2 19.5h20L12 2zm0 4.5l6.5 11.5h-13L12 6.5z" fill="#14a5c3" />
           </svg>
@@ -226,8 +232,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'vite') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Vite">
-        <div className="w-12 h-12 rounded-xl bg-[#14122d] border border-[#2f2766] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#14122d] border border-[#2f2766] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <path d="M12.5 2.5L20 16.5H4L11.5 2.5zm0 0L13.5 9h5l-8.5 12V13h-5L12.5 2.5z" fill="#646CFF" />
             <path d="M13.5 9h5l-8.5 12V13h-5l5.5-9" fill="#FFD600" />
           </svg>
@@ -240,8 +246,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'node' || norm === 'nodejs') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Node.js">
-        <div className="w-12 h-12 rounded-xl bg-[#121c15] border border-[#234d2b] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7" fill="#339933">
+        <div className={`${box} rounded-xl bg-[#121c15] border border-[#234d2b] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={iconSm} fill="#339933">
             <path d="M12 2L4 6.5v11L12 22l8-4.5v-11L12 2zm-1 15.5v-5l-4-2.25v2.5l4 2.25v2.5zm5-2.25L12 17.5v-2.5l4-2.25v2.5zm0-5L12 12.5v-2.5l4-2.25v2.5z" />
           </svg>
         </div>
@@ -253,8 +259,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'livewire') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Livewire">
-        <div className="w-12 h-12 rounded-xl bg-[#2e1523] border border-[#642d4a] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#2e1523] border border-[#642d4a] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <path d="M11 2L2 14h9l-1 8L19 10h-9l1-8z" fill="#FB70A9" />
           </svg>
         </div>
@@ -266,8 +272,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'alpine' || norm === 'alpinejs') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="Alpine.js">
-        <div className="w-12 h-12 rounded-xl bg-[#16232d] border border-[#2b4c66] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none" xmlns="http://www.w3.org/2000/svg">
+        <div className={`${box} rounded-xl bg-[#16232d] border border-[#2b4c66] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={`${iconSm} fill-none`} xmlns="http://www.w3.org/2000/svg">
             <path d="M6 18L12 6l6 12H6z" stroke="#82CA9D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
@@ -279,8 +285,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   if (norm === 'mysql') {
     return (
       <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title="MySQL">
-        <div className="w-12 h-12 rounded-xl bg-[#081e2b] border border-[#1b4c6e] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200">
-          <svg viewBox="0 0 24 24" className="w-8 h-8" fill="#00758F">
+        <div className={`${box} rounded-xl bg-[#081e2b] border border-[#1b4c6e] flex items-center justify-center shadow hover:scale-105 transition-transform duration-200`}>
+          <svg viewBox="0 0 24 24" className={icon} fill="#00758F">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15.5h-2V15h2v2.5zm0-4.25h-2v-4.5h2v4.5z" />
           </svg>
         </div>
@@ -291,7 +297,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ tag }) => {
   // Default fallback for other tech tags
   return (
     <span className="group/icon relative inline-block shrink-0 select-none cursor-pointer" title={tag}>
-      <div className="w-12 h-12 rounded-xl bg-neutral-800 border border-neutral-700/70 text-white font-extrabold text-[9px] uppercase tracking-wider flex items-center justify-center font-sans h-12 px-1 hover:scale-105 transition-transform duration-200 text-center leading-none">
+      <div className={`${box} rounded-xl bg-neutral-800 border border-neutral-700/70 text-white font-extrabold ${size === 'sm' ? 'text-[7px]' : 'text-[9px]'} uppercase tracking-wider flex items-center justify-center font-sans px-1 hover:scale-105 transition-transform duration-200 text-center leading-none`}>
         {tag.substring(0, 3)}
       </div>
     </span>
