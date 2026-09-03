@@ -54,7 +54,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
         }}
       >
         {/* ── Image area ──────────────────────────────────────── */}
-        <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100 dark:bg-neutral-950 border-b border-neutral-200/60 dark:border-neutral-800">
+        <div className="relative overflow-hidden bg-neutral-100 dark:bg-neutral-950 border-b border-neutral-200/60 dark:border-neutral-800">
           <img
             src={project.image}
             alt={project.title}
