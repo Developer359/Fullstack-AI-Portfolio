@@ -14,6 +14,11 @@ import donateWebImg from '../../../../assets/Project/Web/DonateWeb.png';
 import resumeCheckerImg from '../../../../assets/Project/Web/ResumeChecker.png';
 import auraGalleryImg from '../../../../assets/Project/App/AuraGallery.png';
 
+import portfolioHldImg from '../../../../assets/Project/Hld/PortfolioHld.png';
+import webAutomationHldImg from '../../../../assets/Project/Hld/WebAutomationHld.png';
+import whatsappHldImg from '../../../../assets/Project/Hld/Whattsapphld.png';
+import youtubeHldImg from '../../../../assets/Project/Hld/YoutbeHld.png';
+
 export const projectsData: Project[] = [
   // ── Web+Mobile ─────────────────────────────────────────────────
   {
@@ -280,90 +285,135 @@ export const projectsData: Project[] = [
 
   // ── HLD ────────────────────────────────────────────────────────
   {
-    id: 'inventory-smart',
-    title: 'Inventory Smart Architecture',
+    id: 'portfolio-hld',
+    title: 'Portfolio System Design',
     description: {
-      US: 'High-level system design for an advanced enterprise inventory management platform.',
-      ID: 'Advanced inventory management system ka High-Level System Architecture.',
+      US: 'High-level system design for a full-stack developer portfolio with dashboard, creation page, and real-time chat backed by Supabase.',
+      ID: 'Full-stack developer portfolio ka high-level system design jis mein dashboard, creation page aur Supabase chat shamil hai.',
     },
     introduction: {
-      US: 'An enterprise system architecture designed to coordinate massive supplier logs, barcode scans, and automated restock workflows.',
-      ID: 'Enterprise warehousing system jo supplier logs aur real-time alerts ko manage karta hai.',
+      US: 'System architecture diagram covering user flows across Dashboard, Creation Page, and Chat — each persisted via Supabase. Includes a YouTube stat pipeline that fetches video views, channel data, and thumbnails every 12 hours via API keys and stores results back in Supabase.',
+      ID: 'Dashboard, Creation Page aur Chat ke user flows ka system design, Supabase ke sath, aur YouTube stats pipeline jo har 12 ghante API se data fetch karta hai.',
     },
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+    image: portfolioHldImg,
     isFeatured: true,
     primaryType: 'HLD',
     category: 'Projects',
-    techStack: ['Laravel', 'MySQL', 'System Design'],
+    techStack: ['Eraser.io'],
     stats: [
-      { emoji: '📦', value: '10K+', label: 'Items Tracked' },
+      { emoji: '📐', value: 'HLD', label: 'Diagram' },
       { emoji: '👁️', value: 210, label: 'Views' },
     ],
-    techStackList: ['Laravel', 'MySQL', 'System Architecture', 'Redis Cache'],
+    techStackList: ['Eraser.io'],
     featuresList: [
       {
-        title: 'Real-time Low Stock System',
-        desc: 'Background queue processor sending alerts when stock levels fall.',
+        title: 'Multi-Page User Flow',
+        desc: 'User flows across Dashboard, Creation Page, and Chatting Page all connected to Supabase.',
+      },
+      {
+        title: 'YouTube Stats Pipeline',
+        desc: 'Scheduled 12-hour API pipeline that fetches video stats and thumbnails into Supabase.',
       },
     ],
     views: 210,
   },
   {
-    id: 'cloud-chat-app',
-    title: 'Cloud Chat Architecture',
+    id: 'youtube-automation-hld',
+    title: 'YouTube Automation HLD',
     description: {
-      US: 'High-Level Design (HLD) blueprint for a scalable real-time chat application with WebSocket clusters.',
-      ID: 'WebSocket clusters ke sath scalable real-time chat app ka HLD architecture.',
+      US: 'System design for a vision-based browser automation engine that interacts with YouTube via surface automation and coordinate guessing.',
+      ID: 'Vision-based browser automation engine ka system design jo surface automation aur coordinate guessing ke zariye YouTube ke sath interact karta hai.',
     },
     introduction: {
-      US: 'A system architecture covering horizontal scaling, Redis Pub/Sub event broadcasting, and persistent message store patterns.',
-      ID: 'Distributed chat system ka high-level design document aur reference implementation.',
+      US: 'Architecture for an AI-driven automation loop: checks local storage, triggers Surface Automation, performs Vision Check, guesses UI coordinates, retries on failure via DOM scanning, and loops back. On coordinate guess failure (2x), falls back to DOM scanning to re-locate elements.',
+      ID: 'AI-driven automation loop ka architecture jo storage check se start hoke vision check, coordinate guess, DOM scan aur retry loop perform karta hai.',
     },
-    image: 'https://images.unsplash.com/photo-1611746872915-64382b5c76da?q=80&w=800&auto=format&fit=crop',
+    image: webAutomationHldImg,
     isFeatured: false,
     primaryType: 'HLD',
     category: 'Apps',
-    techStack: ['Node.js', 'WebSocket', 'Redis'],
+    techStack: ['Eraser.io'],
     stats: [
-      { emoji: '⚡', value: '<50ms', label: 'Latency' },
       { emoji: '📐', value: 'HLD', label: 'Diagram' },
+      { emoji: '👁️', value: 178, label: 'Views' },
     ],
-    techStackList: ['Node.js', 'Redis Pub/Sub', 'WebSocket Server', 'PostgreSQL'],
+    techStackList: ['Eraser.io'],
     featuresList: [
       {
-        title: 'Horizontal Scaling Design',
-        desc: 'Scaling WebSocket connections behind a shared Redis Pub/Sub layer.',
+        title: 'Vision-Based Automation',
+        desc: 'Surface automation driven by vision checks and coordinate guessing with retry logic.',
+      },
+      {
+        title: 'DOM Fallback Scanning',
+        desc: 'Falls back to DOM scanning when coordinate guess fails twice to re-locate UI elements.',
       },
     ],
     views: 178,
   },
   {
-    id: 'microservices-ecommerce',
-    title: 'Microservices E-Commerce HLD',
+    id: 'whatsapp-system-design',
+    title: 'WhatsApp System Design',
     description: {
-      US: 'System architecture design for an event-driven microservices e-commerce platform.',
-      ID: 'Event-driven microservices e-commerce platform ke liye system design blueprint.',
+      US: 'End-to-end encrypted messaging system design covering client-side encryption, load balancing, presence detection, and offline push notifications.',
+      ID: 'End-to-end encrypted messaging system design jis mein client-side encryption, load balancing, presence detection aur offline push notifications shamil hain.',
     },
     introduction: {
-      US: 'Comprehensive HLD covering API gateway routing, Kafka event streams, and SAGA distributed transaction management.',
-      ID: 'Service decomposition aur Kafka event streams cover karne wala architecture document.',
+      US: 'Full system design of WhatsApp-style messaging: Client encrypts messages, splits them, stores in SQLite, routes through Load Balancer to Chat Gateway. Server side handles Auth, Presence Service (online/offline), Redis for offline queuing, and Push Notifications. Receiver side decrypts and assembles messages.',
+      ID: 'WhatsApp-style messaging ka complete system design: encryption, load balancer, chat gateway, presence service, Redis aur offline push notifications.',
     },
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop',
+    image: whatsappHldImg,
     isFeatured: true,
     primaryType: 'HLD',
     category: 'Backend',
-    techStack: ['Node.js', 'Kafka', 'System Design'],
+    techStack: ['Eraser.io'],
     stats: [
-      { emoji: '🏗️', value: 8, label: 'Services' },
-      { emoji: '📨', value: 'Kafka', label: 'Event Bus' },
+      { emoji: '📐', value: 'HLD', label: 'Diagram' },
+      { emoji: '👁️', value: 256, label: 'Views' },
     ],
-    techStackList: ['API Gateway (Kong)', 'Kafka Events', 'PostgreSQL', 'Docker'],
+    techStackList: ['Eraser.io'],
     featuresList: [
       {
-        title: 'Event-Driven SAGA Flow',
-        desc: 'Decoupled services using Kafka topics for eventual consistency.',
+        title: 'E2E Encryption Flow',
+        desc: 'Client-side message encryption, division, and SQLite storage before routing through Load Balancer.',
+      },
+      {
+        title: 'Presence & Offline Delivery',
+        desc: 'Presence Service detects online/offline state; Redis queues push notifications for offline users.',
       },
     ],
     views: 256,
+  },
+  {
+    id: 'youtube-system-design',
+    title: 'YouTube System Design',
+    description: {
+      US: 'Comprehensive high-level architecture of a YouTube-scale video upload, processing, storage, and CDN delivery system.',
+      ID: 'YouTube-scale video upload, processing, storage aur CDN delivery system ka comprehensive high-level architecture.',
+    },
+    introduction: {
+      US: 'Full system design spanning: API Gateway + Load Balancer ingestion, User Account System (IAM, quotas, analytics), Upload System (resumable chunked upload, real-time status), Storage & Assets S3 (raw bucket, H.264/DASH/HLS transcoding, adaptive bitrate), MetaData System, Video Processing queue, Redis caching, CDN & Playback edge nodes, and analytics dashboard notifications.',
+      ID: 'Complete YouTube system design: API Gateway, upload pipeline, S3 storage, video transcoding, metadata, CDN playback aur analytics notifications.',
+    },
+    image: youtubeHldImg,
+    isFeatured: true,
+    primaryType: 'HLD',
+    category: 'Projects',
+    techStack: ['Eraser.io'],
+    stats: [
+      { emoji: '📐', value: 'HLD', label: 'Diagram' },
+      { emoji: '👁️', value: 320, label: 'Views' },
+    ],
+    techStackList: ['Eraser.io'],
+    featuresList: [
+      {
+        title: 'Video Upload & Transcoding Pipeline',
+        desc: 'Resumable chunked upload into S3, transcoded to H.264/DASH/HLS with adaptive bitrate streams.',
+      },
+      {
+        title: 'CDN & Playback Delivery',
+        desc: 'Edge cache nodes serve video streams to user players with analytics logging.',
+      },
+    ],
+    views: 320,
   },
 ];
